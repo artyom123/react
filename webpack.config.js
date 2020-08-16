@@ -19,7 +19,7 @@ module.exports = {
         `${src}/${indexJS}x`,
     ],
     output: {
-        filename: indexJS,
+        filename: DEV ? indexJS : 'index.[hash].js',
         path: dist,
     },
     devtool: DEV ? 'source-map' : 'none',
@@ -75,8 +75,8 @@ module.exports = {
             filename: `.${indexHtml}`,
         }),
         new MiniCssExtractPlugin({
-            filename: PROD ? '[name].css' : '[name].[hash].css',
-            chunkFilename: PROD ? '[id].css' : '[id].[hash].css',
+            filename: DEV ? '[name].css' : '[name].[hash].css',
+            chunkFilename: DEV ? '[id].css' : '[id].[hash].css',
         }),
         new CleanWebpackPlugin(),
     ],
