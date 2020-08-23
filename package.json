@@ -21,6 +21,7 @@
   "homepage": "https://github.com/artyom123/react#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "autoprefixer": "^9.8.5",
     "jest": "^26.1.0",
     "lodash": "^4.17.19",

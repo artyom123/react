@@ -90,6 +90,30 @@ const THEME = createMuiTheme({
                 padding: '8px 24px',
             },
         },
+        MuiTypography: {
+            h1: {
+                color: stylesConstants.primaryWhite,
+                fontSize: '2rem',
+            },
+        },
+        MuiCardContent: {
+            root: {
+                padding: '15px 0',
+            },
+        },
+        MuiCard: {
+            root: {
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+                maxWidth: '300px',
+                margin: '10px 30px',
+                backgroundColor: 'inherit',
+                boxShadow: 'none',
+                color: stylesConstants.secondaryGray,
+                position: 'relative',
+            },
+        },
     },
 });
 

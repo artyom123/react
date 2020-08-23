@@ -93,4 +93,4 @@ Confirm.propTypes = propTypes;
 Confirm.defaultProps = defaultProps;
 Confirm.displayName = 'Confirm';
 
-export default Confirm;
+export default React.memo(Confirm);

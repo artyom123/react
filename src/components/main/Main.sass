@@ -1,0 +1,26 @@
+@import '../../styles/constants.sass'
+
+.main 
+    display: flex !important
+    flex-wrap: wrap
+    justify-content: center
+    background-color: $primaryBlack
+
+.movie
+    &-action
+        position: absolute
+        top: 0
+        right: 0
+
+    &-grid
+        display: flex
+        justify-content: space-between
+        font-size: 14px !important
+    
+        &-year
+            border: 1px solid $secondaryGray
+            padding: 2px 7px
+            border-radius: 5px
+
+        &-genre
+            font-size: 12px !important
