@@ -5,12 +5,20 @@
     flex-wrap: wrap
     justify-content: center
     background-color: $primaryBlack
+    padding-top: 30px
+    padding-bottom: 30px
 
 .movie
+    &:hover
+        .movie-action
+            opacity: 1
+        
     &-action
         position: absolute
         top: 0
         right: 0
+        opacity: 0
+        transition: opacity .5s ease
 
     &-grid
         display: flex
@@ -24,3 +32,6 @@
 
         &-genre
             font-size: 12px !important
+
+        &-name
+            color: $primaryWhite

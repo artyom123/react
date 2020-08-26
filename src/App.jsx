@@ -16,33 +16,30 @@ const App = () => {
         });
     }, []);
 
-    // const handlerClickEdit = useCallback(() => {
-    //     setOptions({
-    //         type: 'edit',
-    //         title: TITLES.edit.title,
-    //         fields: FIELDS,
-    //     });
-    // }, []);
+    const handlerClickEdit = useCallback(() => {
+        setOptions({
+            type: 'edit',
+            title: TITLES.edit.title,
+            fields: FIELDS,
+        });
+    }, []);
 
-    // const handlerClickDelete = useCallback(() => {
-    //     setOptions({
-    //         type: 'delete',
-    //         title: TITLES.delete.title,
-    //         message: TITLES.delete.message,
-    //     });
-    // }, []);
-
-    // <>
-    // <Confirm options={options} />
-    // <Button onClick={handlerClickAdd} color="primary">Add</Button>
-    // <Button onClick={handlerClickEdit} color="primary">Edit</Button>
-    // <Button onClick={handlerClickDelete} color="primary">Delete</Button>
-    // </>
+    const handlerClickDelete = useCallback(() => {
+        setOptions({
+            type: 'delete',
+            title: TITLES.delete.title,
+            message: TITLES.delete.message,
+        });
+    }, []);
 
     return (
         <>
             <Confirm options={options} />
-            <Home handlerClickAdd={handlerClickAdd} />
+            <Home
+                handlerClickAdd={handlerClickAdd}
+                handlerClickEdit={handlerClickEdit}
+                handlerClickDelete={handlerClickDelete}
+            />
         </>
     );
 };

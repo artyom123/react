@@ -17,15 +17,13 @@ const propTypes = {
 };
 
 const Header = ({ handlerClickAdd }) => (
-    <Grid className="header">
-        <Container>
-            <Grid className="header-grid">
-                <Logo />
-                <MuiButtons name="+ ADD MOVIE" action={handlerClickAdd} />
-            </Grid>
-            <SearchBar />
-        </Container>
-    </Grid>
+    <Container className="header">
+        <Grid className="header-grid">
+            <Logo />
+            <MuiButtons name="+ ADD MOVIE" action={handlerClickAdd} />
+        </Grid>
+        <SearchBar />
+    </Container>
 );
 
 Header.propTypes = propTypes;

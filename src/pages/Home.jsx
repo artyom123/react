@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,7 +12,8 @@ const propTypes = {
     handlerClickAdd: PropTypes.func.isRequired,
 };
 
-const Home = ({ handlerClickAdd }) => {
+const Home = (props) => {
+    const { handlerClickAdd } = props;
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -21,7 +23,7 @@ const Home = ({ handlerClickAdd }) => {
     return (
         <>
             <Header handlerClickAdd={handlerClickAdd} />
-            <Main movies={movies} />
+            <Main movies={movies} {...props} />
             <Footer />
         </>
     );

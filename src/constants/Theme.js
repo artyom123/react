@@ -114,6 +114,29 @@ const THEME = createMuiTheme({
                 position: 'relative',
             },
         },
+        MuiIconButton: {
+            root: {
+                '&:hover': {
+                    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                },
+            },
+        },
+        MuiMenu: {
+            paper: {
+                backgroundColor: stylesConstants.primaryBlack,
+                minWidth: '155px',
+                paddingTop: '20px',
+            },
+        },
+        MuiMenuItem: {
+            root: {
+                color: stylesConstants.primaryWhite,
+                transition: 'all .5s ease',
+                '&:hover': {
+                    backgroundColor: stylesConstants.primaryPing,
+                },
+            },
+        },
     },
 });
 

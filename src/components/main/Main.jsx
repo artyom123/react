@@ -1,21 +1,17 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
     Container,
-    Card,
-    CardActions,
-    IconButton,
-    CardContent,
-    Grid,
-    Typography,
 } from '@material-ui/core';
-import { MoreVert } from '@material-ui/icons';
+
+import Movie from '../movie/Movie';
 
 import './Main.sass';
 
 const propTypes = {
     movies: PropTypes.oneOfType([
-        PropTypes.object,
+        PropTypes.array,
     ]),
 };
 
@@ -23,38 +19,19 @@ const defaultProps = {
     movies: [],
 };
 
-const Main = ({ movies }) => (
-    <Container className="main">
-        {
-            movies.map((movie) => (
-                <Card key={movie.movie_id} className="movie">
-                    <CardActions className="movie-action" disableSpacing>
-                        <IconButton aria-label="settings">
-                            <MoreVert />
-                        </IconButton>
-                    </CardActions>
-                    <img
-                        src={movie.poster}
-                        alt={movie.name}
-                    />
-                    <CardContent>
-                        <Grid className="movie-grid">
-                            <Typography>
-                                { movie.name }
-                            </Typography>
-                            <Typography className="movie-grid-year">
-                                { movie.year }
-                            </Typography>
-                        </Grid>
-                        <Typography className="movie-grid-genre">
-                            { movie.genre.join(', ') }
-                        </Typography>
-                    </CardContent>
-                </Card>
-            ))
-        }
-    </Container>
-);
+const Main = (props) => {
+    const { movies } = props;
+
+    return (
+        <Container className="main">
+            {
+                movies.map((movie) => (
+                    <Movie movie={movie} key={movie.movie_id} {...props} />
+                ))
+            }
+        </Container>
+    );
+};
 
 Main.propTypes = propTypes;
 Main.defaultProps = defaultProps;
