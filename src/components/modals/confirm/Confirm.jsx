@@ -12,6 +12,7 @@ import {
     DialogActions,
     TextField,
     Grid,
+    IconButton,
 } from '@material-ui/core';
 
 import CloseIcon from '../../icons/CloseIcon';
@@ -67,10 +68,9 @@ const Confirm = ({ options }) => {
             open={open}
             onClose={handleClose}
         >
-            <CloseIcon
-                className="closeIcon"
-                onClick={handleClose}
-            />
+            <IconButton onClick={handleClose}>
+                <CloseIcon className="closeIcon" />
+            </IconButton>
             <Grid className="dialog-grid">
                 <DialogTitle
                     className="dialog-title"

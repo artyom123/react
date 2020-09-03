@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
     Menu,
+    IconButton,
 } from '@material-ui/core';
 
 import CloseIcon from '../icons/CloseIcon';
@@ -41,10 +42,14 @@ const MuiMenu = (props) => {
             onClose={actionClose}
             anchorEl={anchorEl}
         >
-            <CloseIcon
-                className="closeIcon-small"
+            <IconButton
                 onClick={actionClose}
-            />
+                className="closeIcon-menu"
+                disableFocusRipple
+                disableRipple
+            >
+                <CloseIcon className="closeIcon-menu-small" />
+            </IconButton>
             { children }
         </Menu>
     );

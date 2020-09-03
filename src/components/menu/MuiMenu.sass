@@ -1,10 +1,14 @@
 @import '../../styles/constants.sass'
 
-.closeIcon-small
-    position: absolute
-    color: $primaryWhite
+.closeIcon-menu
+    position: absolute !important
     cursor: pointer
-    right: 5px 
-    top: -18px 
-    width: 14px !important
-    outline: none
+    right: -8px
+    top: -33px
+    &:hover
+        background-color: rgba(0, 0, 0, 0) !important
+
+    &-small
+        color: $primaryWhite
+        width: 14px !important
+        outline: none

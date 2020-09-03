@@ -16,18 +16,24 @@ import MuiMenu from '../menu/MuiMenu';
 import './Movie.sass';
 
 const propTypes = {
+    handlerClickEdit: PropTypes.func.isRequired,
+    handlerClickDelete: PropTypes.func.isRequired,
+    setMovieId: PropTypes.func.isRequired,
     movie: PropTypes.oneOfType([
         PropTypes.object,
     ]),
-    handlerClickEdit: PropTypes.func.isRequired,
-    handlerClickDelete: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
     movie: {},
 };
 
-const Movie = ({ movie, handlerClickEdit, handlerClickDelete }) => {
+const Movie = ({
+    movie,
+    handlerClickEdit,
+    handlerClickDelete,
+    setMovieId,
+}) => {
     const [openMenu, setOpenMenu] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -42,14 +48,15 @@ const Movie = ({ movie, handlerClickEdit, handlerClickDelete }) => {
     }, []);
 
     return (
-        <Card key={movie.movie_id} className="movie">
-            <CardActions
-                className="movie-action"
-                onClick={handleClick}
-            >
+        <Card
+            key={movie.movie_id}
+            className="movie"
+            onClick={() => { setMovieId(movie.movie_id); }}
+        >
+            <CardActions className="movie-action">
                 <IconButton
+                    onClick={handleClick}
                     aria-label="settings"
-                    disableSpacing
                 >
                     <MoreVert />
                 </IconButton>
@@ -87,4 +94,4 @@ Movie.propTypes = propTypes;
 Movie.defaultProps = defaultProps;
 Movie.displayName = 'Movie';
 
-export default React.memo(Movie);
+export default Movie;
