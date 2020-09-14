@@ -1,0 +1,54 @@
+@import '../../../styles/constants'
+
+.movieheader
+
+    &-grid
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 20px
+
+    &-search
+        width: 20px
+        color: $primaryPing
+
+    &-description
+        color: $primaryWhite
+        display: flex
+
+        &-grid
+            padding: 0 40px
+
+            &-header
+                display: flex
+                align-items: center
+
+                &-vote_average
+                    border: 1px solid $primaryWhite
+                    border-radius: 50%
+                    width: 40px
+                    height: 40px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    margin-left: 20px
+
+                    &-text
+                        color: #2bb12b
+                        font-size: 18px !important
+
+            &-reward
+                opacity: 0.6
+                font-size: 12px !important
+
+            &-time
+                display: flex
+                color: $primaryPing
+                padding: 15px 0
+
+                &-year
+                    font-size: 20px !important
+                    margin-right: 30px !important
+
+                &-runtime
+                    font-size: 20px !important
